@@ -1,5 +1,7 @@
 const nomes = []; // Cria a variável nomes como um array vazio para armazenar os nomes.
 
+const adicionarEnter = document.getElementById('amigo'); // Seleciona o campo de entrada de texto com o id "amigo".
+
 function adicionarAmigo(){ //Declara a função adicionarAmigo
     let nome = document.getElementById("amigo").value; //Captura o valor digitado no campo HTML com id="amigo" e guarda na variável nome.
     if(nome==""||nome==" "){ //Verifica se nome está vazio ou contém apenas um espaço.
@@ -31,3 +33,9 @@ function sortearAmigo(){ //Declara a função sortearAmigo.
         location.reload(); // Define que, ao clicar nesse botão, a página será recarregada.
     };
 }
+
+adicionarEnter.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    adicionarAmigo();
+  }
+});
